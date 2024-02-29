@@ -4,7 +4,7 @@ from cutie import select
 
 filenames = ConfigParser()
 filenames.optionxform=str
-filenames.read('filenames.ini')
+filenames.read('luminous_paths.ini')
 sections : list[str] = filenames.sections()
 # items : dict[str,str] = {}
 
