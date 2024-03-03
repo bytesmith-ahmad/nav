@@ -25,10 +25,10 @@ raw_paths : list[str] = []     # for process
 captions : list[int] = []
 for section in sections:
     # add config.ini sections as menu items, but captions will make them unselectable
-    captions += [i]
-    stylish_items += [section + ":"]
-    raw_paths += [None]
-    i += 1
+    captions += [i,i+1]
+    stylish_items += [' ', f"\033[4m{section}\033[0m:"]
+    raw_paths += [None, None]
+    i += 2
     for k,v in filenames.items(section):
         # add menu items and their non-styled equivalent in parallel
         stylish_items += [f"\033[{33}m{k}\033[0m : {v}"]
@@ -40,10 +40,10 @@ stylish_items += ['',f"Add to this list: {computer}_config.ini"]
 raw_paths += [None, f"{getcwd()}/{computer}_config.ini"]
 captions += [i]
 
-position = 1 # set cursor at first non-section item
+position = 2 # set cursor at first non-section item
 while True:
     system('cls')
-    print("Hello " + computer.upper() + "\n")
+    print("Hello " + computer.upper())
     position = select(
             stylish_items,
             caption_indices=captions,
