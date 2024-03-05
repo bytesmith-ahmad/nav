@@ -36,9 +36,23 @@ for section in sections:
         i += 1
 
 # This is a shortcut to the config file responsible for this menu
-stylish_items += ['',f"Add to this list: {computer}_config.ini"]
-raw_paths += [None, f"{getcwd()}/{computer}_config.ini"]
-captions += [i]
+stylish_items += [
+    '',
+    "***********************",
+    '',
+    f"UPDATE THIS LIST: {computer}_config.ini"
+]
+raw_paths += [
+    None,
+    None,
+    None,
+    f"{getcwd()}/{computer}_config.ini",
+    ]
+captions += [
+    i,
+    i+1,
+    i+2
+]
 
 position = 2 # set cursor at first non-section item
 while True:
