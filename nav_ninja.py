@@ -69,3 +69,8 @@ while True:
     file = raw_paths[position]
     prefix = '' if is_valid_website(file) else 'file:///' # if it's not a website, add prefix
     open_url(prefix + file)
+    # TODO Add exit and auto commit
+    
+    # git add .
+    # git commit -m "config"
+    # git push
