@@ -1,9 +1,16 @@
 :: Runs launcher in interactive mode
 
+setlocal
+
 git pull
 
 python ".\nav_ninja.py"
 
-echo "Continuing will commit and push changes"
+:: Create a temporary file with the message
+echo DON'T FORGET TO COMMIT > message.txt
 
-pause
+:: Open Notepad with the message
+start notepad.exe message.txt
+
+:: Exit the batch script without closing Notepad
+exit /b

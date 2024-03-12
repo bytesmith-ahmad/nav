@@ -4,10 +4,12 @@ from webbrowser   import open    as open_url
 from cutie        import select  as select
 from re           import compile as compile_regex
 
+CONFIGS = "configs" # path to folder
+
 def read_config(computer):
     filenames = ConfigParser()
     filenames.optionxform=str
-    filenames.read(f"{computer}_config.ini")
+    filenames.read(f"{CONFIGS}/{computer}.ini")
     return filenames
 
 def is_valid_website(url):
@@ -40,7 +42,7 @@ stylish_items += [
     '',
     "***********************",
     '',
-    f"UPDATE THIS LIST: {computer}_config.ini",
+    f"UPDATE THIS LIST: {computer}.ini",
     '',
     "EXIT\033[0m" # Exit is always last
 ]
@@ -48,7 +50,7 @@ raw_paths += [
     None, # i
     None, # i + 1
     None, # i + 2
-    f"{getcwd()}/{computer}_config.ini",
+    f"{getcwd()}/{CONFIGS}/{computer}.ini",
     None, # i + 4
     None  # i + 5
     ]
