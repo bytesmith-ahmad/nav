@@ -1,5 +1,5 @@
 git pull
-git diff
+git diff --no-prefix -U200
 git add .
 git commit -m "sync"
 git push
