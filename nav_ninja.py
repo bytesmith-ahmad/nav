@@ -17,6 +17,7 @@ def is_valid_website(url):
     match = pattern.match(url)
     return bool(match)
 
+chdir(path.dirname(path.abspath(__file__)))
 computer = getenv('COMPUTERNAME').lower()
 filenames = read_config(computer)
 sections = filenames.sections()
