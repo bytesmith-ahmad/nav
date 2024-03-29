@@ -1,6 +1,6 @@
 from os           import *
 from configparser import ConfigParser
-from pathlib import Path
+from pathlib      import Path
 from webbrowser   import open    as open_url
 from cutie        import select  as select
 from re           import compile as compile_regex
